@@ -71,6 +71,8 @@ router.get("/mobiles",AuthVerify,UserVerify,(req,res)=>{
     })
 })
 
+
+
 router.get("/mobile/:id",AuthVerify,(req,res)=>{
         MobileModel.findOne({_id:req.params.id}).then((result)=>{
         if(result){

@@ -28,6 +28,28 @@ router.post("/addcart",Authverify,UserVerify,(req,res)=>{
 })
 
 
+// router.get("/carts",Authverify,UserVerify,(req,res)=>{
+//     const id=req.Uniqueid
+
+//     const usercart= CartModel.aggregate([
+//         {
+//           '$match': {
+//             'userid': id
+//           }
+//         },
+//         {
+//             $match:{
+//                 "iscart":"yes"
+//             }
+//         }
+//       ]).then((result)=>{
+//         res.status(200).json(result)
+//       }).catch(err=>{
+//         console.log(err)
+//         res.status(500).json({message:"something went wrong"})
+//       })
+// })
+
 router.get("/carts",Authverify,UserVerify,(req,res)=>{
     const id=req.Uniqueid
 
@@ -48,6 +70,17 @@ router.get("/carts",Authverify,UserVerify,(req,res)=>{
         console.log(err)
         res.status(500).json({message:"something went wrong"})
       })
+})
+
+
+
+router.get("/getanId",Authverify,UserVerify,async(req,res)=>{
+    try {
+        const result=await CartModel.find({})
+    } catch (error) {
+        console.log(err)
+        res.status(500).json({message:"something went wrong"})
+    }
 })
 
 
