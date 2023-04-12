@@ -153,8 +153,8 @@ router.post("/create-checkout-session",async(req,res)=>{
                 quantity:1
             }
         }),
-        success_url:"http://localhost:3000/payment",
-        cancel_url:"http://localhost:3000/navbar/cart"
+        success_url:"https://fascinating-dragon-43b7cd.netlify.app/payment",
+        cancel_url:"https://fascinating-dragon-43b7cd.netlify.app/navbar/cart"
        })
 
         res.json({url:session.url})
