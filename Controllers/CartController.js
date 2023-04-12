@@ -124,7 +124,7 @@ const storeItems=new Map([
     ["64101321c03692b0dc77de04",{price:99800,name:"Ambrane Mobile Holding Tabletop Stand, 180 Perfect View"}],
     ["64101334c03692b0dc77de06",{price:154900,name:"Digitek DTR 550 LW (67 Inch) Tripod For DSLR"}],
     ["64101348c03692b0dc77de08",{price:169900,name:"Iphone 13"}],
-    ["6410135cc03692b0dc77de0a",{price:11280,name:"Jabra Enterprise Store Evolve2 40"}],
+    ["6410135cc03692b0dc77de0a",{price:1128000,name:"Jabra Enterprise Store Evolve2 40"}],
 
 ])
 
