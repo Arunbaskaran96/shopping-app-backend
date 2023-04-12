@@ -1,5 +1,6 @@
 const express=require("express")
 const router=express.Router()
+var braintree=require("braintree")
 
 const CartModel=require("../Models/CartModel")
 const AuthVerify=require("./middleware/Verify")
@@ -108,6 +109,61 @@ router.put("/orders",AuthVerify,UserVerify,async(req,res)=>{
     }
 })
 
+// var gateway = new braintree.BraintreeGateway({
+//     environment: braintree.Environment.Sandbox,
+//     merchantId: "ws337gpjkxjfm3cd",
+//     publicKey: "tntb3vzrcq67grnb",
+//     privateKey: "45d1d90914c54bcce947df9d77b0c1c8",
+//   });
 
+
+//   router.get("/braintree/token",async(req,res)=>{
+//     try {
+//         gateway.clientToken.generate({},function(err,response){
+//             if(err){
+//                 res.status(500).json({message:"something went wrong"})
+//             }else{
+//                 res.status(200).json(response)
+//             }
+//         })
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).json({message:"something went wrong"})
+//     }
+//   })
+
+
+//   router.post("/braintree/payment",AuthVerify,UserVerify,async(req,res)=>{
+//     try {
+//         const {cart,nonce}=req.body
+//         let total=0
+//         cart.map((i)=>total+parseInt(i.price))
+
+//         let newTranscation=gateway.transaction.sale({
+//             amount:total,
+//             paymentMethodNonce:nonce,
+//             options:{
+//                 submitForSettlement:true
+//             }
+//         },
+//         function(error,result){
+//             if(result){
+//                 const order=new OrderModel({
+//                     productId:cart,
+//                     payment:result,
+//                     userId:req.Uniqueid
+//                 })
+//                 res.status(200).json({message:"worked"})
+//             }else{
+//                 console.log(error)
+//                 res.status(500).json({message:"something went wrong"})
+//             }
+//         }
+//         )
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).json({message:"something went wrong"})
+//     }
+//   })
 
 module.exports=router

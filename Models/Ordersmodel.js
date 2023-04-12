@@ -10,7 +10,8 @@ const OrderModel=mongoose.Schema({
         ref:"cart",
         type:Array,
         required:true
-    }
+    },
+    payment:{}
 })
 
 

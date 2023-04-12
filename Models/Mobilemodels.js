@@ -16,8 +16,7 @@ const Mobilemodel=mongoose.Schema({
     companyname:{
         type:String,
         required:true
-    },
-
+    }
 })
 
 

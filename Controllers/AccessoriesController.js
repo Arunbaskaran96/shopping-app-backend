@@ -10,7 +10,8 @@ router.post("/accessories",AuthVerify,(req,res)=>{
         model:req.body.model,
         price:req.body.price,
         img:req.body.img,
-        companyname:req.body.companyname
+        companyname:req.body.companyname,
+        productId:req.body._id
     })
 
     newAccessories.save().then((result)=>{

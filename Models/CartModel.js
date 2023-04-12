@@ -25,6 +25,10 @@ const CartModel=mongoose.Schema({
     iscart:{
         type:String,
         default:"yes"
+    },
+    productId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true
     }
 })
 
